@@ -2,5 +2,5 @@
 
 require 'octoauth'
 
-Octoauth.new note: 'targit', files: '~/.targit.yml', autosave: true
+Octoauth.new note: 'targit', file: '~/.targit.yml', autosave: true
 
