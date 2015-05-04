@@ -1,5 +1,9 @@
 FROM dock0/ssh
 MAINTAINER akerl <me@lesaker.org>
-RUN pacman -S --needed --noconfirm make vim-minimal
-RUN mkdir -p /var/lib/dock0-manager
-RUN chown -R $ADMIN:$ADMIN /var/lib/dock0-manaager
+ENV REPO_DIR /var/lib/dock0-manager
+RUN pacman -S --needed --noconfirm make vim-minimal ruby
+RUN mkdir -p $REPO_DIR
+RUN usermod --home $REPO_DIR $ADMIN
+ADD bashrc $REPO_DIR/.bashrc
+ADD load_token /opt/load_token
+RUN chown -R $ADMIN:$ADMIN $REPO_DIR

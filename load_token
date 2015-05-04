@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'octoauth'
+
+Octoauth.new note: 'targit', files: '~/.targit.yml', autosave: true
+
