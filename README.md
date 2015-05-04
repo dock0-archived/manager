@@ -9,7 +9,7 @@ Build manager for running builds via [my build container](https://github.com/doc
 ## To launch
 
 ```
-docker run -d -v /var/lib/dock0-manager:/var/lib/dock0-manager dock0/manager
+docker run -d -P -v /var/lib/dock0-manager:/var/lib/dock0-manager -v /var/run/docker.sock:/var/run/docker.sock eadd528e7c42
 ```
 
 ## License
