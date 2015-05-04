@@ -1,6 +1,6 @@
 FROM dock0/ssh
 MAINTAINER akerl <me@lesaker.org>
-RUN pacman -S --needed --noconfirm make vim-minimal ruby
+RUN pacman -S --needed --noconfirm make vim-minimal ruby docker-amylum
 RUN gem install --no-user-install octoauth
 ENV REPO_DIR /var/lib/dock0-manager
 RUN mkdir -p $REPO_DIR
