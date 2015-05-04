@@ -6,5 +6,5 @@ ENV REPO_DIR /var/lib/dock0-manager
 RUN mkdir -p $REPO_DIR
 RUN chown -R $ADMIN:$ADMIN $REPO_DIR
 RUN echo $REPO_DIR > /.repo_dir
-ADD bashrc $REPO_DIR/.bashrc
+ADD bashrc /home/$ADMIN/.bashrc
 ADD load_token /opt/load_token
