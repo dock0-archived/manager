@@ -2,6 +2,7 @@ dock0/manager
 =======
 
 [![Automated Build](http://img.shields.io/badge/automated-build-green.svg)](https://hub.docker.com/r/dock0/manager/)
+[![Build Status](https://img.shields.io/circleci/project/dock0/ssh.svg)](https://circleci.com/gh/dock0/ssh)
 [![MIT Licensed](http://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
 Build manager for running builds via [my build container](https://github.com/dock0/manager)
