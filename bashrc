@@ -3,13 +3,14 @@
 export REPO_DIR="$(cat /.repo_dir)"
 
 function clone() {
-    local org="$(echo "$1" | cut -d'/' -f1)"
-    local repo="$(echo "$2" | cut -d'/' -f2)"
+    local org="$(echo "$1" | cut -s -d'/' -f1)"
+    local repo="$(echo "$1" | cut -s -d'/' -f2)"
     if [[ -z "$org" ]] || [[ -z "$repo" ]] ; then
         echo "Usage: clone org/repo"
+        return
     fi
     local token="$(grep '^targit' ~/.targit.yml | cut -d' ' -f2)"
-    local url="https://${USER}:${TOKEN}@github.com/${org}/${repo}"
+    local url="https://${USER}:${token}@github.com/${org}/${repo}"
     cd $REPO_DIR
     git clone "${url}"
     cd $repo
