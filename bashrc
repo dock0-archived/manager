@@ -1,5 +1,7 @@
 [ -e ~/.targit.yml ] || /opt/load_token
 
+export REPO_DIR="$(cat /.repo_dir)"
+
 function clone() {
     local org="$(echo "$1" | cut -d'/' -f1)"
     local repo="$(echo "$2" | cut -d'/' -f2)"
@@ -8,7 +10,7 @@ function clone() {
     fi
     local token="$(grep '^targit' ~/.targit.yml | cut -d' ' -f2)"
     local url="https://${USER}:${TOKEN}@github.com/${org}/${repo}"
-    cd /opt
+    cd $REPO_DIR
     git clone "${url}"
     cd $repo
     git config user.name $USER
@@ -16,4 +18,4 @@ function clone() {
     cp ~/.targit.yml ./.github
 }
 
-cd /opt
+cd $REPO_DIR
