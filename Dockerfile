@@ -7,3 +7,4 @@ RUN echo $REPO_DIR > /.repo_dir
 ADD bashrc /home/$ADMIN/.bashrc
 ADD load_token /opt/load_token
 ADD repo_dir /service/repo_dir/run
+ADD gitconfig /home/$ADMIN/.gitconfig
