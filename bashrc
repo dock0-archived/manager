@@ -12,6 +12,9 @@ function clone() {
         echo "Usage: clone repo [org]"
         return
     fi
+    if [[ -z "$org" ]] ; then
+        org="amylum"
+    fi
     local token="$(grep '^targit' ~/.targit.yml | cut -d' ' -f2)"
     local url="https://${USER}:${token}@github.com/${org}/${repo}"
     cd $REPO_DIR
