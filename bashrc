@@ -3,10 +3,13 @@
 export REPO_DIR="$(cat /.repo_dir)"
 
 function clone() {
-    local org="$(echo "$1" | cut -s -d'/' -f1)"
-    local repo="$(echo "$1" | cut -s -d'/' -f2)"
-    if [[ -z "$org" ]] || [[ -z "$repo" ]] ; then
-        echo "Usage: clone org/repo"
+    local repo="$1"
+    local org="$2"
+    if [[ -z "$org" ]] ; then
+        org=amylum
+    fi
+    if [[ -z "$repo" ]] ; then
+        echo "Usage: clone repo [org]"
         return
     fi
     local token="$(grep '^targit' ~/.targit.yml | cut -d' ' -f2)"
