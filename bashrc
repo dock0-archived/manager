@@ -12,7 +12,7 @@ function clone() {
     local token="$(grep '^targit' ~/.targit.yml | cut -d' ' -f2)"
     local url="https://${USER}:${token}@github.com/${org}/${repo}"
     cd $REPO_DIR
-    git clone "${url}"
+    git clone --recursive "${url}"
     cd $repo
     git config user.name $USER
     cat ~/.gitconfig >> .git/config
