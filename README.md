@@ -1,3 +1,5 @@
+**Inactive Project:** I've stopped using this project in favor of building packages on CircleCI
+
 dock0/manager
 =======
 
